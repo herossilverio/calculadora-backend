@@ -11,5 +11,8 @@ def calcular():
     resultado = calcular_resina(dados)
     return jsonify(resultado)
 
+import os
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Render define essa variável automaticamente
+    app.run(host='0.0.0.0', port=port)
